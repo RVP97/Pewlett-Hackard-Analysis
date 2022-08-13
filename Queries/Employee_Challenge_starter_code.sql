@@ -11,5 +11,3 @@ WHERE
 ORDER BY
     _____,
     _____ DESC;
-
-copy departments TO '/Users/rodrigo/Desktop/Bootcamp/Week 7 SQL/Pewlett-Hackard-Analysis' WITH DELIMITER ',' CSV HEADER;

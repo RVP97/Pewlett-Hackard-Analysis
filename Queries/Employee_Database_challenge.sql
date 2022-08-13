@@ -45,7 +45,7 @@ SELECT
     emp.birth_date,
     de.from_date,
     de.to_date,
-    ti.title
+    ti.title INTO mentorship_eligibility
 FROM
     employees AS emp
     INNER JOIN dept_emp AS de ON emp.emp_no = de.emp_no
@@ -58,3 +58,37 @@ WHERE
     )
 ORDER BY
     emp_no ASC;
+
+SELECT
+    title,
+    COUNT(title)
+FROM
+    unique_titles
+GROUP BY
+    title;
+
+SELECT
+    dept_name,
+    COUNT(dept_name) INTO total_employees_by_dept
+FROM
+    employees_by_dept
+GROUP BY
+    dept_name;
+
+SELECT
+    COUNT(dept_name)
+FROM
+    employees_by_dept;
+
+SELECT
+    COUNT(emp_no)
+FROM
+    unique_titles;
+
+SELECT
+    title,
+    COUNT(title) INTO mentorship_by_title
+FROM
+    mentorship_eligibility
+GROUP BY
+    title;
